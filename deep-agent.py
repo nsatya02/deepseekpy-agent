@@ -14,7 +14,7 @@ def clean_code_response(response):
     return response.strip()
 
 def generate_code(question,data=None, data_context=""):
-    client= Groq(api_key="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")
+    client= Groq(api_key="your-api-key")
     system_prompt = """ generate python code that:
     -Uses only provided variables
     -prints results
@@ -26,7 +26,7 @@ def generate_code(question,data=None, data_context=""):
             {"role":"system", "content":system_prompt},
             {"role":"user","content": user_message}
         ],
-        model = "deepseek-r1-distill-llama-70b"
+        model = "deepseek-r1-distill-llama-70b" # change your model as per your requirements.
     )
 
     response = chat_completion.choices[0].message.content
