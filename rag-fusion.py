@@ -3,7 +3,7 @@ from groq import Groq
 import random
 
 # Initialize OpenAI API
-client= Groq(api_key="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")  # Alternative: Use environment variable
+client= Groq(api_key="api-key")  # Alternative: Use environment variable
 
 # Function to generate queries using OpenAI's ChatGPT
 def generate_queries_chatgpt(original_query):
