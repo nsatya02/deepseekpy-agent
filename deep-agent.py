@@ -79,8 +79,8 @@ df['sales'] = df['sales'] * (1.2 * df['weekend'])  # Higher sales on weekends
 df.loc[df['category'] == 'Electronics', 'sales'] *= 1.5  # Electronics tend to have higher sales
 df['sales'] = df['sales'].abs().round(2)  # Ensure sales are positive and round the values
 
-# Define the analytical task for sales analysis using pandas.
-# This is just an  example, if you want to train an machine learning model you can mention in the question and execute.
+
+#it is just an  example, if you want to train an machine learning model you can mention in the question and execute.
 question = "Analyze sales patterns: calculate total sales by category and show if weekends have higher average sales"
 context = """DataFrame 'df' contains columns:
 - date: daily dates for 2023
