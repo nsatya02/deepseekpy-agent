@@ -62,10 +62,9 @@ def agent(question, data=None, data_context=""):
 
 np.random.seed(42)
 
-# Generate a series of dates (one year)
+"Generate a series of dates (one year)"
 dates = pd.date_range(start='2023-01-01', end='2023-12-31', freq='D')
 
-# Create a DataFrame with simulated data
 df = pd.DataFrame({
     'date': dates,
     'category': np.random.choice(['Electronics', 'Clothing', 'Food', 'Books'], size=len(dates)),
@@ -75,7 +74,7 @@ df = pd.DataFrame({
     'weekend': dates.dayofweek >= 5
 })
 
-# Introduce some relationships in the data
+
 df['sales'] = df['sales'] * (1.2 * df['weekend'])  # Higher sales on weekends
 df.loc[df['category'] == 'Electronics', 'sales'] *= 1.5  # Electronics tend to have higher sales
 df['sales'] = df['sales'].abs().round(2)  # Ensure sales are positive and round the values
@@ -92,5 +91,4 @@ context = """DataFrame 'df' contains columns:
 - weekend: boolean flag indicating weekends
 """
 
-# Invoke the agent with the question, the simulated DataFrame, and the data context.
 solution, result = agent(question=question, data={'df': df}, data_context=context)
